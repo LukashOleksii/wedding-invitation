@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Весілля · Олексій та Марія-Ірина · 11.09.2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Unbounded:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ivory: #f5f0e8;
+  --ivory2: #ede6d5;
+  --ivory3: #e0d6c0;
+  --bordeaux: #6b1a2a;
+  --bordeaux2: #8b2535;
+  --bordeaux-light: #a84455;
+  --olive: #4a5a2e;
+  --olive2: #5d7038;
+  --olive-light: #7a9048;
+  --olive-pale: #c8d4a8;
+  --gold: #b8922a;
+  --gold-light: #d4aa45;
+  --dark: #1e1410;
+  --text: #2e1f14;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'EB Garamond', serif;
+  background: var(--ivory);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ===================== ORNAMENTAL PATTERNS ===================== */
+
+.embroidery-stripe {
+  width: 100%;
+  height: 16px;
+  background:
+    repeating-linear-gradient(90deg,
+      var(--bordeaux) 0, var(--bordeaux) 4px,
+      var(--gold) 4px, var(--gold) 8px,
+      var(--olive) 8px, var(--olive) 12px,
+      var(--gold) 12px, var(--gold) 16px,
+      var(--bordeaux) 16px, var(--bordeaux) 20px,
+      transparent 20px, transparent 24px
+    );
+}
+
+.hero .embroidery-stripe {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 20px 60px;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #d4a88a;
+  background-image: url('https://i1-e.pinimg.com/1200x/17/5a/35/175a35f886f75a78f337c83989219be9.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+  animation: zoomOut 2s ease-out forwards;
+}
+
+/* Mobile and tablet - vertical image */
+@media (max-width: 1024px) {
+  .hero::after {
+    background-image: url('https://i1-e.pinimg.com/1200x/22/d1/28/22d12821f93853847f061d8b9f43df61.jpg');
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Overlay for better text readability */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(30,20,16,0.8) 0%,
+    rgba(30,20,16,0.6) 35%,
+    rgba(30,20,16,0.4) 65%,
+    rgba(30,20,16,0.8) 100%
+  );
+  z-index: 0;
+}
+
+/* Field ground */
+.hero-field {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 45%;
+  background: linear-gradient(180deg, #8a7a50 0%, #6a5e38 50%, #504830 100%);
+  z-index: 1;
+  border-radius: 60% 60% 0 0 / 20px 20px 0 0;
+}
+
+/* Wheat silhouettes left */
+.wheat-left, .wheat-right {
+  position: absolute;
+  bottom: 38%;
+  z-index: 2;
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+.wheat-left { left: 2%; }
+.wheat-right { right: 2%; transform: scaleX(-1); }
+
+.wheat-stalk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wheat-stalk svg { display:block; }
+
+/* HAY ARCH - pure CSS/SVG illusion */
+.arch-container {
+  position: relative;
+  z-index: 3;
+  margin-top: 20px;
+  width: min(500px, 90vw);
+  flex-shrink: 0;
+}
+
+/* Floating flowers on arch */
+.arch-flower {
+  position: absolute;
+  font-size: 1.4rem;
+  animation: sway 3s ease-in-out infinite;
+  z-index: 5;
+}
+@keyframes sway {
+  0%,100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Hero text block */
+.hero-content {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  margin-top: 0;
+}
+
+.hero-blessing {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.3s forwards;
+}
+
+.hero-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  font-weight: 400;
+  color: white;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4), 0 4px 40px rgba(0,0,0,0.3);
+  opacity: 0;
+  animation: fadeUp 1s ease 0.6s forwards;
+  margin-bottom: 20px;
+}
+
+.hero-ampersand {
+  font-size: 0.6em;
+  font-style: italic;
+  color: var(--gold-light);
+  display: block;
+  line-height: 0.8;
+  margin: 10px 0;
+}
+
+.hero-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  letter-spacing: 12px;
+  color: var(--gold-light);
+  margin: 20px 0 8px;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.9s forwards;
+}
+
+.hero-location {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeUp 1s ease 1.1s forwards;
+  margin-bottom: 30px;
+}
+
+.ornament-divider {
+  display: none;
+}
+
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 2;
+  max-width: 500px;
+  opacity: 0;
+  animation: fadeUp 1s ease 1.5s forwards;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 36px;
+  padding-bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  animation: bounce 2s infinite;
+  opacity: 0.7;
+}
+.scroll-hint span { font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+.scroll-arrow { width: 20px; height: 20px; border-right: 2px solid rgba(255,255,255,0.8); border-bottom: 2px solid rgba(255,255,255,0.8); transform: rotate(45deg); }
+
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+/* ===================== NAV ===================== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bordeaux);
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+nav::-webkit-scrollbar { display: none; }
+nav a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.75);
+  text-decoration: none;
+  padding: 14px 18px;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+nav a:hover { color: var(--ivory); background: rgba(255,255,255,0.1); }
+
+/* ===================== SECTIONS ===================== */
+section { padding: 80px 20px; }
+
+.section-inner { max-width: 700px; margin: 0 auto; }
+
+.section-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--olive2);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+.section-eyebrow::before, .section-eyebrow::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: var(--olive-pale);
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--bordeaux);
+  text-align: center;
+  margin-bottom: 36px;
+  line-height: 1.2;
+}
+
+/* ===================== CEREMONY ===================== */
+.ceremony-section {
+  background: var(--ivory);
+  border-bottom: 4px solid transparent;
+  border-image: repeating-linear-gradient(90deg, var(--bordeaux) 0, var(--bordeaux) 8px, var(--gold) 8px, var(--gold) 16px, var(--olive) 16px, var(--olive) 24px) 4;
+}
+
+.church-card {
+  background: white;
+  border: 1px solid var(--ivory3);
+  padding: 36px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 30px rgba(107,26,42,0.08);
+}
+.church-card::before {
+  content: '✝';
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bordeaux);
+  color: var(--ivory);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  border-radius: 2px;
+}
+.church-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--bordeaux);
+  margin-bottom: 6px;
+}
+.church-sub {
+  font-size: 0.85rem;
+  color: var(--olive2);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.church-time {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--dark);
+  letter-spacing: 4px;
+}
+.church-note {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* ===================== TIMELINE ===================== */
+.timeline-section { background: var(--ivory2); }
+
+.timeline {
+  position: relative;
+  padding-left: 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--bordeaux), var(--olive));
+  transform: translateX(-50%);
+}
+
+.tl-item {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  gap: 0 20px;
+  margin-bottom: 40px;
+  position: relative;
+  align-items: center;
+}
+.tl-item:nth-child(odd) .tl-content { grid-column: 1; text-align: right; align-self: center; }
+.tl-item:nth-child(odd) .tl-dot { grid-column: 2; align-self: center; }
+.tl-item:nth-child(odd) .tl-empty { grid-column: 3; }
+.tl-item:nth-child(even) .tl-empty { grid-column: 1; }
+.tl-item:nth-child(even) .tl-dot { grid-column: 2; align-self: center; }
+.tl-item:nth-child(even) .tl-content { grid-column: 3; text-align: left; align-self: center; }
+
+.tl-dot {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--bordeaux);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--ivory);
+  box-shadow: 0 0 0 4px var(--ivory2), 0 0 0 6px var(--bordeaux);
+  z-index: 1;
+  flex-shrink: 0;
+}
+.tl-time {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.tl-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--bordeaux);
+  margin-bottom: 3px;
+}
+.tl-desc {
+  font-size: 0.82rem;
+  color: #777;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ===================== LOCATION ===================== */
+.location-section { background: var(--ivory); }
+
+.location-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  background: white;
+  border: 1px solid var(--ivory3);
+  padding: 36px;
+  box-shadow: 0 4px 30px rgba(107,26,42,0.06);
+}
+@media(max-width:600px){ .location-card { grid-template-columns:1fr; } }
+
+.location-info { display: flex; flex-direction: column; justify-content: center; }
+.location-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--bordeaux);
+  margin-bottom: 8px;
+}
+.location-tagline {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--olive2);
+  margin-bottom: 16px;
+}
+.location-detail {
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 2;
+}
+.location-detail strong { color: var(--bordeaux); display:block; }
+
+.location-map-mock {
+  background: linear-gradient(135deg, var(--olive-pale), #b5c98a);
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--olive);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid var(--olive-pale);
+}
+.location-map-mock::before { content: '📍'; font-size: 2rem; }
+
+.transfer-box {
+  margin-top: 24px;
+  background: var(--bordeaux);
+  color: var(--ivory);
+  padding: 22px 28px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.transfer-icon { font-size: 1.8rem; flex-shrink:0; }
+.transfer-text strong { display:block; font-family:'Cormorant Garamond',serif; font-size:1.1rem; margin-bottom:4px; }
+.transfer-text span { font-size:0.8rem; opacity:0.75; line-height:1.8; }
+
+/* ===================== DRESSCODE ===================== */
+.dresscode-section { background: var(--ivory2); }
+
+.dress-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media(max-width:500px){ .dress-grid { grid-template-columns:1fr; } }
+
+.dress-card {
+  padding: 28px;
+  border: 1px solid var(--ivory3);
+  background: white;
+  text-align: center;
+}
+.dress-icon { font-size: 2.5rem; margin-bottom: 12px; }
+.dress-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--bordeaux);
+  margin-bottom: 8px;
+}
+.dress-desc { font-size: 0.82rem; color: #666; line-height: 1.8; }
+
+.vyshyvanka-note {
+  margin-top: 28px;
+  padding: 24px;
+  background: var(--bordeaux);
+  color: var(--ivory);
+  text-align: center;
+}
+.vyshyvanka-note strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+.vyshyvanka-note p { font-size: 0.85rem; opacity: 0.85; line-height: 1.8; }
+
+.palette-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.swatch {
+  width: 48px; height: 48px;
+  border-radius: 4px;
+  position: relative;
+}
+.swatch span {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.55rem;
+  letter-spacing: 0.5px;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* ===================== OBRIADY ===================== */
+.obriady-section { background: var(--ivory); }
+
+.obriady-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+.obriad-card {
+  padding: 24px 16px;
+  border-top: 3px solid var(--bordeaux);
+  background: white;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.obriad-card:hover { transform: translateY(-4px); }
+.obriad-icon { font-size: 2rem; margin-bottom: 10px; }
+.obriad-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--bordeaux);
+  margin-bottom: 6px;
+}
+.obriad-desc { font-size: 0.75rem; color: #888; line-height: 1.6; }
+
+/* ===================== RSVP ===================== */
+.rsvp-section {
+  background: linear-gradient(135deg, var(--bordeaux) 0%, #4a1020 100%);
+  color: var(--ivory);
+  text-align: center;
+}
+.rsvp-section .section-title { color: var(--ivory2); }
+.rsvp-section .section-eyebrow { color: var(--gold-light); }
+.rsvp-section .section-eyebrow::before,
+.rsvp-section .section-eyebrow::after { background: rgba(255,255,255,0.2); }
+
+.rsvp-form { max-width: 440px; margin: 0 auto; }
+.rsvp-input {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: var(--ivory);
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.rsvp-input:focus { border-color: var(--gold-light); }
+.rsvp-input::placeholder { color: rgba(245,240,232,0.4); }
+.rsvp-input option { background: var(--bordeaux); }
+
+.rsvp-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--gold);
+  border: none;
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+.rsvp-btn:hover { background: var(--gold-light); }
+.rsvp-deadline { margin-top: 16px; font-size: 0.75rem; opacity: 0.5; letter-spacing: 2px; }
+
+/* ===================== CONTACTS ===================== */
+.contacts-section { background: var(--ivory2); text-align: center; }
+
+.contacts-row {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.contact-block {}
+.contact-role { font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: var(--olive2); margin-bottom: 6px; }
+.contact-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--bordeaux); margin-bottom: 4px; }
+.contact-phone { font-size: 0.85rem; color: var(--text); }
+
+/* ===================== FOOTER ===================== */
+footer {
+  background: var(--dark);
+  color: rgba(245,240,232,0.3);
+  text-align: center;
+  padding: 40px 20px;
+}
+footer .footer-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--gold);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+footer p { font-size: 0.75rem; letter-spacing: 2px; }
+
+/* ===================== FLORAL DECORATIONS ===================== */
+.dahlia {
+  display: inline-block;
+  font-size: 1.3rem;
+  animation: spin-slow 8s linear infinite;
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+
+.floral-divider {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 1.2rem;
+  letter-spacing: 10px;
+  color: var(--bordeaux);
+  opacity: 0.5;
+}
+
+/* Parallax-ish floating dahlia bg */
+.dahlia-bg {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.06;
+  pointer-events: none;
+  animation: floatDahlia 6s ease-in-out infinite;
+}
+@keyframes floatDahlia { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-12px) rotate(10deg)} }
+
+/* ===================== PHOTO GALLERY ===================== */
+.photo-gallery {
+  margin-top: 40px;
+}
+
+.gallery-hero-image {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  border: 1px solid var(--ivory3);
+  box-shadow: 0 8px 32px rgba(107,26,42,0.12);
+}
+
+.gallery-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-intro {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.gallery-intro h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--bordeaux);
+  margin-bottom: 8px;
+}
+
+.gallery-intro p {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--olive2);
+  line-height: 1.8;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery-item {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border: 1px solid var(--ivory3);
+  background: var(--ivory2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(107,26,42,0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--olive-pale), #b5c98a);
+  color: var(--olive);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  gap: 8px;
+}
+
+.gallery-placeholder::before {
+  content: '📷';
+  font-size: 2rem;
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(30,20,16,0.85), transparent);
+  color: var(--ivory);
+  padding: 16px 12px 12px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+}
+
+.location-features {
+  margin-top: 32px;
+  padding: 24px;
+  background: white;
+  border-left: 4px solid var(--bordeaux);
+}
+
+.location-features h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--bordeaux);
+  margin-bottom: 12px;
+}
+
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 20px;
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.features-list li {
+  list-style: none;
+  padding-left: 20px;
+  position: relative;
+}
+
+.features-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.7rem;
+}
+
+/* ===================== RESPONSIVE ===================== */
+/* Tablet and desktop - keep zigzag timeline */
+@media(max-width:768px) and (min-width:601px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile only - vertical timeline */
+@media(max-width:600px) {
+  .timeline { padding-left: 20px; }
+  .timeline::before { left: 40px; }
+  .tl-item { 
+    display: flex;
+    gap: 16px;
+  }
+  .tl-item:nth-child(odd) .tl-content,
+  .tl-item:nth-child(even) .tl-content { 
+    text-align: left;
+    order: 2;
+  }
+  .tl-item:nth-child(odd) .tl-dot,
+  .tl-item:nth-child(even) .tl-dot { 
+    order: 1;
+  }
+  .tl-item:nth-child(odd) .tl-empty,
+  .tl-item:nth-child(even) .tl-empty { 
+    display: none;
+  }
+  
+  .gallery-grid { grid-template-columns: 1fr; }
+  .features-list { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero" id="top">
+
+  <div class="hero-content">
+    <div class="hero-blessing">Бог дав, Бог зберіг — разом назавжди</div>
+    <div class="hero-names">
+      Олексій
+      <span class="hero-ampersand">&amp;</span>
+      Марія&#8209;Ірина
+    </div>
+    <div class="hero-date">11 · 09 · 2026</div>
+    <div class="hero-location">Галицьке весілля на Тернопільщині</div>
+    <div class="ornament-divider"><div class="ornament-center"></div></div>
+    <p class="hero-tagline">
+      З любов'ю та радістю запрошуємо вас<br>
+      розділити з нами цей особливий день —<br>
+      сповнений обрядів, пісень і живого вогню
+    </p>
+  </div>
+
+  <div class="scroll-hint">
+    <span>гортай</span>
+    <div class="scroll-arrow"></div>
+  </div>
+
+  <div class="embroidery-stripe"></div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <a href="#program">Програма</a>
+  <a href="#venchannya">Вінчання</a>
+  <a href="#lokatsiya">Локація</a>
+  <a href="#dresscode">Вишиванка</a>
+  <a href="#obriady">Обряди</a>
+  <a href="#rsvp">Підтвердити</a>
+</nav>
+
+<!-- ===== TIMELINE ===== -->
+<section class="timeline-section" id="program">
+  <div class="section-inner">
+    <div class="section-eyebrow">розклад свята</div>
+    <div class="section-title">Як минатиме наш день</div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-time">10:45</div>
+          <div class="tl-label">Збір біля церкви</div>
+          <div class="tl-desc">с. Підгірці, Львівська обл.</div>
+        </div>
+        <div class="tl-dot">✝</div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-empty"></div>
+        <div class="tl-dot">💍</div>
+        <div class="tl-content">
+          <div class="tl-time">11:00</div>
+          <div class="tl-label">Таїнство Вінчання</div>
+          <div class="tl-desc">Церква Воздвиження Чесного Хреста</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-time">13:00</div>
+          <div class="tl-label">Трансфер до локації</div>
+          <div class="tl-desc">Виїзд трансфера із Тернополя</div>
+        </div>
+        <div class="tl-dot">🚐</div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-empty"></div>
+        <div class="tl-dot">🥂</div>
+        <div class="tl-content">
+          <div class="tl-time">13:30</div>
+          <div class="tl-label">Велкам дрінк</div>
+          <div class="tl-desc">Зустріч гостей · напої · атмосфера поля</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-time">14:30</div>
+          <div class="tl-label">Обід · Галицькі страви</div>
+          <div class="tl-desc">Традиційна кухня, живі музиканти</div>
+        </div>
+        <div class="tl-dot">🍽</div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-empty"></div>
+        <div class="tl-dot">🎶</div>
+        <div class="tl-content">
+          <div class="tl-time">16:00</div>
+          <div class="tl-label">Народні пісні й танці</div>
+          <div class="tl-desc">Весільні обряди, коломийки, аркан</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-time">~22:00</div>
+          <div class="tl-label">Вечірній сюрприз — Ватра</div>
+          <div class="tl-desc">Живий вогонь під відкритим небом · зірки · спогади</div>
+        </div>
+        <div class="tl-dot">🔥</div>
+        <div class="tl-empty"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CEREMONY ===== -->
+<section class="ceremony-section" id="venchannya">
+  <div class="section-inner">
+    <div class="section-eyebrow">таїнство вінчання</div>
+    <div class="section-title">Церква Воздвиження<br>Чесного Хреста</div>
+    <div class="church-card">
+      <div class="church-name">Церква Воздвиження Чесного Хреста</div>
+      <div class="church-sub">с. Підгірці, Львівська область</div>
+      <div class="church-time">11:00 – 12:00</div>
+      <p class="church-note">Просимо бути на місці о 10:45. Вхід до церкви — у скромному вбранні. Жінкам мати хустку.</p>
+    </div>
+    <div class="floral-divider">🌺 ❧ 🌺</div>
+    <p style="text-align:center; font-style:italic; font-size:1rem; color:#666; line-height:1.9;">
+      Після вінчання — вільний час для фото біля церкви<br>
+      та переїзд до локації «Літепло» (приблизно 1,5 год)
+    </p>
+  </div>
+</section>
+
+<!-- ===== LOCATION ===== -->
+<section class="location-section" id="lokatsiya">
+  <div class="section-inner">
+    <div class="section-eyebrow">місце святкування</div>
+    <div class="section-title">Локація «Літепло»</div>
+    <div class="location-card">
+      <div class="location-info">
+        <div class="location-name">«Літепло»</div>
+        <div class="location-tagline">Тернопільська область · серед полів і природи</div>
+        <div class="location-detail">
+          <strong>Адреса</strong>
+          Тернопільська область<br>(точна адреса у підтвердженні)
+        </div>
+        <div class="location-detail" style="margin-top:12px;">
+          <strong>Як дістатись</strong>
+          Трансфер від Тернополя — включено<br>
+          Відправлення туди та назад
+        </div>
+        <div style="margin-top:16px;">
+          <a href="#" style="font-size:0.8rem; color:var(--bordeaux); letter-spacing:2px;">Прокласти маршрут →</a>
+        </div>
+      </div>
+      <div class="location-map-mock">Карта локації</div>
+    </div>
+    <div class="transfer-box">
+      <div class="transfer-icon">🚌</div>
+      <div class="transfer-text">
+        <strong>Безкоштовний трансфер</strong>
+        <span>
+          Відправлення з Тернополя до локації та назад.<br>
+          Деталі часу й місця збору — після підтвердження участі.
+        </span>
+      </div>
+    </div>
+
+    <!-- Photo Gallery -->
+    <div class="photo-gallery">
+      <div class="gallery-intro">
+        <h3>Простір для вашого свята</h3>
+        <p>Дерев'яна стодола з панорамними вікнами, лаунж-зони серед природи,<br>
+        танцювальний майданчик під відкритим небом та краєвиди на захід сонця</p>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://liteplo.com.ua/img/gallery/more/fullsize/4.jpg" alt="Стодола Літепло - бенкетний зал" loading="lazy">
+          <div class="gallery-caption">Бенкетний зал · 170 м² + тераса 80 м²</div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://liteplo.com.ua/img/features/feature1.jpg" alt="Лаунж-зона на природі" loading="lazy">
+          <div class="gallery-caption">Велика лаунж-зона з видом на поля</div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://i.pinimg.com/736x/1f/df/d2/1fdfd2f6abb77949215b2cb52dd7e488.jpg" alt="Захід сонця - виїзна церемонія" loading="lazy">
+          <div class="gallery-caption">Стильна фотозона для вашого свята</div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&h=900&fit=crop&q=85" alt="Танцювальний майданчик" loading="lazy">
+          <div class="gallery-caption">Танцювальний майданчик під зірками</div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://instagram.flwo1-1.fna.fbcdn.net/v/t39.30808-6/470185748_18053475838985191_3825304532310765007_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=MzIyNzMyMzI1OTc4MjUxOTg0Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=xGjJx3wKgEIQ7kNvwGJ4gZy&_nc_oc=AdpSw5eBwmBCA83yrZcz6SSvRo8S7dOcvkdHjys2w_1uX7INAf8v7MhP8SyZbExO4io&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.flwo1-1.fna&_nc_gid=1IjmOW1LtbnXRysD49x31Q&_nc_ss=7a22e&oh=00_Af5cj7ZEC6H9660di00Pg1s3N-iD1VnbNqssLqQy-O0apg&oe=6A13E450" alt="Природа навколо локації" loading="lazy">
+          <div class="gallery-caption">30 км від Тернополя · поряд ліс і заказник</div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&h=900&fit=crop&q=85" alt="Ватра - вечірнє багаття" loading="lazy">
+          <div class="gallery-caption">Місце для багаття та вечірніх посиденьок</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location Features -->
+    <div class="location-features">
+      <h4>Що входить в оренду локації:</h4>
+      <ul class="features-list">
+        <li>Стодола з панорамними вікнами (170 м²)</li>
+        <li>Велика тераса (80 м²)</li>
+        <li>Лаунж-зони з меблями та пледами</li>
+        <li>Танцювальний майданчик</li>
+        <li>Місце для виїзної церемонії</li>
+        <li>Зона для багаття (ватра)</li>
+        <li>Кухня для кейтерингу</li>
+        <li>Терасні парасолі та декор</li>
+        <li>Паркінг для гостей</li>
+        <li>Санвузли на території</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DRESSCODE ===== -->
+<section class="dresscode-section" id="dresscode">
+  <div class="section-inner">
+    <div class="section-eyebrow">стиль вечора</div>
+    <div class="section-title">Вишиванка — обов'язково</div>
+    <div class="dress-grid">
+      <div class="dress-card">
+        <div class="dress-icon">👘</div>
+        <div class="dress-title">Жінки</div>
+        <div class="dress-desc">Вишиванка або сукня у народному стилі. Вінок — вітається. Зручне взуття — обов'язково, святкуємо на природі!</div>
+      </div>
+      <div class="dress-card">
+        <div class="dress-icon">👔</div>
+        <div class="dress-title">Чоловіки</div>
+        <div class="dress-desc">Вишиванка з брюками або костюм з вишитою сорочкою. Краватки-вишиванки — чудовий вибір.</div>
+      </div>
+    </div>
+    <div class="vyshyvanka-note">
+      <strong>🌻 Галицький дрес-код</strong>
+      <p>Просимо прийти у вишиванці — це частина духу нашого свята.<br>
+      Кольорова гама: бордо, оливковий, крем, золото.<br>
+      Уникайте суто чорного або білого.</p>
+    </div>
+    <div style="margin-top:32px; text-align:center;">
+      <div class="section-eyebrow">кольорова палітра</div>
+      <div class="palette-row">
+        <div class="swatch" style="background:#6b1a2a;"><span>бордо</span></div>
+        <div class="swatch" style="background:#8b2535;"><span>вишня</span></div>
+        <div class="swatch" style="background:#4a5a2e;"><span>оливка</span></div>
+        <div class="swatch" style="background:#7a9048;"><span>зелень</span></div>
+        <div class="swatch" style="background:#f5f0e8; border:1px solid #ddd;"><span style="color:#aaa;">слон.кість</span></div>
+        <div class="swatch" style="background:#b8922a;"><span>золото</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OBRIADY ===== -->
+<section class="obriady-section" id="obriady">
+  <div class="section-inner">
+    <div class="section-eyebrow">галицькі традиції</div>
+    <div class="section-title">Обряди нашого весілля</div>
+    <div class="obriady-grid">
+      <div class="obriad-card">
+        <div class="obriad-icon">🌾</div>
+        <div class="obriad-name">Коровай</div>
+        <div class="obriad-desc">Освячений короваї — символ достатку й благословення</div>
+      </div>
+      <div class="obriad-card">
+        <div class="obriad-icon">🪡</div>
+        <div class="obriad-name">Рушник</div>
+        <div class="obriad-desc">Весільний рушник ручної роботи — наш оберіг</div>
+      </div>
+      <div class="obriad-card">
+        <div class="obriad-icon">💃</div>
+        <div class="obriad-name">Коломийки</div>
+        <div class="obriad-desc">Народні танці й живі коломийки разом з гостями</div>
+      </div>
+      <div class="obriad-card">
+        <div class="obriad-icon">🎵</div>
+        <div class="obriad-name">Аркан</div>
+        <div class="obriad-desc">Гуцульський чоловічий танець — чисто галицька традиція</div>
+      </div>
+      <div class="obriad-card">
+        <div class="obriad-icon">🌿</div>
+        <div class="obriad-name">Вінок нареченої</div>
+        <div class="obriad-desc">Обряд зняття вінка — перехід у новий статус</div>
+      </div>
+      <div class="obriad-card">
+        <div class="obriad-icon">🔥</div>
+        <div class="obriad-name">Ватра</div>
+        <div class="obriad-desc">Вечірнє вогнище — серце галицьких гулянь</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RSVP ===== -->
+<section class="rsvp-section" id="rsvp">
+  <div class="section-inner">
+    <div class="section-eyebrow">будь ласка, підтвердьте до 1 серпня 2026</div>
+    <div class="section-title">Чи будете ви з нами?</div>
+    <div class="rsvp-form">
+      <input class="rsvp-input" type="text" placeholder="Ваше ім'я та прізвище">
+      <input class="rsvp-input" type="number" placeholder="Кількість гостей" min="1" max="5">
+      <select class="rsvp-input">
+        <option value="" disabled selected>Потрібен трансфер з Тернополя?</option>
+        <option>Так, туди і назад</option>
+        <option>Тільки туди</option>
+        <option>Тільки назад</option>
+        <option>Дістанусь самостійно</option>
+      </select>
+      <input class="rsvp-input" type="text" placeholder="Дієтичні обмеження (якщо є)">
+      <select class="rsvp-input">
+        <option value="" disabled selected>Ваша відповідь</option>
+        <option>✓ Так, обов'язково буду!</option>
+        <option>✗ На жаль, не зможу</option>
+      </select>
+      <button class="rsvp-btn">Надіслати підтвердження</button>
+      <p class="rsvp-deadline">ДЕДЛАЙН ПІДТВЕРДЖЕННЯ · 1 СЕРПНЯ 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTS ===== -->
+<section class="contacts-section" id="contacts">
+  <div class="section-inner">
+    <div class="section-eyebrow">маєте питання?</div>
+    <div class="section-title">Зв'яжіться з нами</div>
+    <div class="contacts-row">
+      <div class="contact-block">
+        <div class="contact-role">Наречена</div>
+        <div class="contact-name">Марія&#8209;Ірина</div>
+        <div class="contact-phone">+38 (0__) ___-__-__</div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-role">Наречений</div>
+        <div class="contact-name">Олексій</div>
+        <div class="contact-phone">+38 (0__) ___-__-__</div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-role">Координатор</div>
+        <div class="contact-name">Весільний організатор</div>
+        <div class="contact-phone">+38 (0__) ___-__-__</div>
+      </div>
+    </div>
+    <div class="floral-divider" style="margin-top:40px;">🌺 🌾 🌺</div>
+    <p style="text-align:center; font-size:0.75rem; color:#aaa; letter-spacing:2px; text-transform:uppercase;">
+      Хештег · #олексій_і_марія_ірина_2026
+    </p>
+  </div>
+</section>
+
+<div class="embroidery-stripe"></div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-names">Олексій &amp; Марія&#8209;Ірина</div>
+  <p>11 · 09 · 2026 &nbsp;·&nbsp; Тернопільська область &nbsp;·&nbsp; Галицьке весілля</p>
+  <p style="margin-top:8px; font-size:0.6rem; opacity:0.3;">Бог дав, Бог зберіг — разом назавжди</p>
+</footer>
+
+</body>
+</html>
