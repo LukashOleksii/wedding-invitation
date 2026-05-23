@@ -39,10 +39,10 @@
 <!-- ===== NAV ===== -->
 <nav>
   <a href="#program">Програма</a>
-  <a href="#venchannya">Вінчання</a>
+  <a href="#venchannya" class="hidden">Вінчання</a>
   <a href="#lokatsiya">Локація</a>
-  <a href="#dresscode">Вишиванка</a>
-  <a href="#obriady">Обряди</a>
+  <a href="#dresscode">Дрескод</a>
+  <a href="#obriady" class="hidden">Обряди</a>
   <a href="#rsvp">Підтвердити</a>
 </nav>
 
@@ -55,72 +55,62 @@
 
       <div class="tl-item">
         <div class="tl-content">
-          <div class="tl-time">10:45</div>
-          <div class="tl-label">Збір біля церкви</div>
-          <div class="tl-desc">с. Підгірці, Львівська обл.</div>
-        </div>
-        <div class="tl-dot">✝</div>
-        <div class="tl-empty"></div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-empty"></div>
-        <div class="tl-dot">💍</div>
-        <div class="tl-content">
           <div class="tl-time">11:00</div>
           <div class="tl-label">Таїнство Вінчання</div>
           <div class="tl-desc">Церква Воздвиження Чесного Хреста</div>
         </div>
+        <div class="tl-dot">💍</div>
+        <div class="tl-empty"></div>
       </div>
 
       <div class="tl-item">
+        <div class="tl-empty"></div>
+        <div class="tl-dot">🚗</div>
         <div class="tl-content">
           <div class="tl-time">13:00</div>
           <div class="tl-label">Трансфер до локації</div>
           <div class="tl-desc">Виїзд трансфера із Тернополя</div>
         </div>
-        <div class="tl-dot">🚐</div>
-        <div class="tl-empty"></div>
       </div>
 
       <div class="tl-item">
-        <div class="tl-empty"></div>
-        <div class="tl-dot">🥂</div>
         <div class="tl-content">
           <div class="tl-time">13:30</div>
           <div class="tl-label">Велкам дрінк</div>
           <div class="tl-desc">Зустріч гостей · напої · атмосфера поля</div>
         </div>
+        <div class="tl-dot">🥂</div>
+        <div class="tl-empty"></div>
       </div>
 
       <div class="tl-item">
+        <div class="tl-empty"></div>
+        <div class="tl-dot">🍽</div>
         <div class="tl-content">
           <div class="tl-time">14:30</div>
           <div class="tl-label">Обід · Галицькі страви</div>
           <div class="tl-desc">Традиційна кухня, живі музиканти</div>
         </div>
-        <div class="tl-dot">🍽</div>
-        <div class="tl-empty"></div>
       </div>
 
       <div class="tl-item">
-        <div class="tl-empty"></div>
-        <div class="tl-dot">🎶</div>
         <div class="tl-content">
           <div class="tl-time">16:00</div>
           <div class="tl-label">Народні пісні й танці</div>
           <div class="tl-desc">Весільні обряди, коломийки, аркан</div>
         </div>
+        <div class="tl-dot">🎵</div>
+        <div class="tl-empty"></div>
       </div>
 
       <div class="tl-item">
+        <div class="tl-empty"></div>
+        <div class="tl-dot">🔥</div>
         <div class="tl-content">
           <div class="tl-time">~22:00</div>
           <div class="tl-label">Вечірній сюрприз — Ватра</div>
           <div class="tl-desc">Живий вогонь під відкритим небом · зірки · спогади</div>
         </div>
-        <div class="tl-dot">🔥</div>
-        <div class="tl-empty"></div>
       </div>
 
     </div>
@@ -138,11 +128,20 @@
       <div class="church-time">11:00 – 12:00</div>
       <p class="church-note">Просимо бути на місці о 10:45. Вхід до церкви — у скромному вбранні. Жінкам мати хустку.</p>
     </div>
-    <div class="floral-divider">🌺 ❧ 🌺</div>
-    <p style="text-align:center; font-style:italic; font-size:1rem; color:#666; line-height:1.9;">
-      Після вінчання — вільний час для фото біля церкви<br>
-      та переїзд до локації «Літепло» (приблизно 1,5 год)
-    </p>
+  </div>
+  
+  <div class="floral-divider towel"><img src="towel.png" alt="Рушник"></div>
+  
+  <div class="section-inner">
+    <div class="transfer-info">
+      <h3>Після вінчання чекаємо гостей на локації «Літепло»!</h3>
+      <p class="transfer-subtitle">Доїзд до локації можливий у декількох форматах:</p>
+      <ul class="transfer-options">
+        <li>Гості можуть самостійно їхати власним транспортом від церкви до «Літепло»</li>
+        <li>Після вінчання повернутися до Тернополя, залишити автомобіль там і дістатися до локації спільним трансфером</li>
+        <li>Гості, які не будуть присутні на вінчанні, зможуть приєднатися до трансферу з Тернополя безпосередньо до локації «Літепло»</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -184,59 +183,49 @@
     <!-- Photo Gallery -->
     <div class="photo-gallery">
       <div class="gallery-intro">
-        <h3>Простір для вашого свята</h3>
+        <h3>Простір нашого свята</h3>
         <p>Дерев'яна стодола з панорамними вікнами, лаунж-зони серед природи,<br>
         танцювальний майданчик під відкритим небом та краєвиди на захід сонця</p>
       </div>
       
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="https://liteplo.com.ua/img/gallery/more/fullsize/4.jpg" alt="Стодола Літепло - бенкетний зал" loading="lazy">
+      <!-- Main Image -->
+      <div class="gallery-main-image">
+        <img src="https://liteplo.com.ua/img/gallery/more/fullsize/4.jpg" alt="Стодола Літепло - бенкетний зал">
+        <div class="gallery-main-caption">Бенкетний зал · 170 м² + тераса 80 м²</div>
+      </div>
+      
+      <!-- Thumbnails -->
+      <div class="gallery-thumbnails">
+        <div class="gallery-thumbnail active">
+          <img src="https://liteplo.com.ua/img/gallery/more/fullsize/4.jpg" alt="Стодола Літепло - бенкетний зал">
           <div class="gallery-caption">Бенкетний зал · 170 м² + тераса 80 м²</div>
         </div>
         
-        <div class="gallery-item">
-          <img src="https://liteplo.com.ua/img/features/feature1.jpg" alt="Лаунж-зона на природі" loading="lazy">
+        <div class="gallery-thumbnail">
+          <img src="https://liteplo.com.ua/img/features/feature1.jpg" alt="Лаунж-зона на природі">
           <div class="gallery-caption">Велика лаунж-зона з видом на поля</div>
         </div>
         
-        <div class="gallery-item">
-          <img src="https://i.pinimg.com/736x/1f/df/d2/1fdfd2f6abb77949215b2cb52dd7e488.jpg" alt="Захід сонця - виїзна церемонія" loading="lazy">
+        <div class="gallery-thumbnail">
+          <img src="https://i.pinimg.com/736x/1f/df/d2/1fdfd2f6abb77949215b2cb52dd7e488.jpg" alt="Захід сонця - виїзна церемонія">
           <div class="gallery-caption">Стильна фотозона для вашого свята</div>
         </div>
         
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&h=900&fit=crop&q=85" alt="Танцювальний майданчик" loading="lazy">
+        <div class="gallery-thumbnail">
+          <img src="https://i.pinimg.com/736x/4d/e1/3b/4de13bd93c8c2c5ca8d38e7a3b39b8d5.jpg" alt="Танцювальний майданчик">
           <div class="gallery-caption">Танцювальний майданчик під зірками</div>
         </div>
         
-        <div class="gallery-item">
-          <img src="https://instagram.flwo1-1.fna.fbcdn.net/v/t39.30808-6/470185748_18053475838985191_3825304532310765007_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=MzIyNzMyMzI1OTc4MjUxOTg0Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=xGjJx3wKgEIQ7kNvwGJ4gZy&_nc_oc=AdpSw5eBwmBCA83yrZcz6SSvRo8S7dOcvkdHjys2w_1uX7INAf8v7MhP8SyZbExO4io&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.flwo1-1.fna&_nc_gid=1IjmOW1LtbnXRysD49x31Q&_nc_ss=7a22e&oh=00_Af5cj7ZEC6H9660di00Pg1s3N-iD1VnbNqssLqQy-O0apg&oe=6A13E450" alt="Природа навколо локації" loading="lazy">
+        <div class="gallery-thumbnail">
+          <img src="https://instagram.flwo1-1.fna.fbcdn.net/v/t39.30808-6/470185748_18053475838985191_3825304532310765007_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=MzIyNzMyMzI1OTc4MjUxOTg0Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=xGjJx3wKgEIQ7kNvwGJ4gZy&_nc_oc=AdpSw5eBwmBCA83yrZcz6SSvRo8S7dOcvkdHjys2w_1uX7INAf8v7MhP8SyZbExO4io&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.flwo1-1.fna&_nc_gid=1IjmOW1LtbnXRysD49x31Q&_nc_ss=7a22e&oh=00_Af5cj7ZEC6H9660di00Pg1s3N-iD1VnbNqssLqQy-O0apg&oe=6A13E450" alt="Природа навколо локації">
           <div class="gallery-caption">30 км від Тернополя · поряд ліс і заказник</div>
         </div>
         
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&h=900&fit=crop&q=85" alt="Ватра - вечірнє багаття" loading="lazy">
+        <div class="gallery-thumbnail">
+          <img src="https://i.pinimg.com/736x/af/95/ae/af95ae7273a0a1f056ab6b01196ec2a0.jpg" alt="Ватра - вечірнє багаття">
           <div class="gallery-caption">Місце для багаття та вечірніх посиденьок</div>
         </div>
       </div>
-    </div>
-
-    <!-- Location Features -->
-    <div class="location-features">
-      <h4>Що входить в оренду локації:</h4>
-      <ul class="features-list">
-        <li>Стодола з панорамними вікнами (170 м²)</li>
-        <li>Велика тераса (80 м²)</li>
-        <li>Лаунж-зони з меблями та пледами</li>
-        <li>Танцювальний майданчик</li>
-        <li>Місце для виїзної церемонії</li>
-        <li>Зона для багаття (ватра)</li>
-        <li>Кухня для кейтерингу</li>
-        <li>Терасні парасолі та декор</li>
-        <li>Паркінг для гостей</li>
-        <li>Санвузли на території</li>
-      </ul>
     </div>
   </div>
 </section>
@@ -248,14 +237,14 @@
     <div class="section-title">Вишиванка — обов'язково</div>
     <div class="dress-grid">
       <div class="dress-card">
-        <div class="dress-icon">👘</div>
+        <img src="https://i.pinimg.com/736x/64/b1/f7/64b1f7315972b1402a3409470e284627.jpg" alt="Дрескод для жінок" class="dress-photo">
         <div class="dress-title">Жінки</div>
-        <div class="dress-desc">Вишиванка або сукня у народному стилі. Вінок — вітається. Зручне взуття — обов'язково, святкуємо на природі!</div>
+        <div class="dress-desc">Вишиванка або сукня у народному стилі. Вінок — вітається. <br>Зручне взуття — обов'язково, святкуємо на природі!</div>
       </div>
       <div class="dress-card">
-        <div class="dress-icon">👔</div>
+        <img src="https://i.pinimg.com/1200x/56/9b/2d/569b2dfa84252192ad5e2970d569a068.jpg" alt="Дрескод для чоловіків" class="dress-photo">
         <div class="dress-title">Чоловіки</div>
-        <div class="dress-desc">Вишиванка з брюками або костюм з вишитою сорочкою. Краватки-вишиванки — чудовий вибір.</div>
+        <div class="dress-desc">Вишиванка з брюками або костюм з вишитою сорочкою.<br>Краватки-вишиванки — чудовий вибір.</div>
       </div>
     </div>
     <div class="vyshyvanka-note">
@@ -264,16 +253,13 @@
       Кольорова гама: бордо, оливковий, крем, золото.<br>
       Уникайте суто чорного або білого.</p>
     </div>
-    <div style="margin-top:32px; text-align:center;">
-      <div class="section-eyebrow">кольорова палітра</div>
-      <div class="palette-row">
-        <div class="swatch" style="background:#6b1a2a;"><span>бордо</span></div>
-        <div class="swatch" style="background:#8b2535;"><span>вишня</span></div>
-        <div class="swatch" style="background:#4a5a2e;"><span>оливка</span></div>
-        <div class="swatch" style="background:#7a9048;"><span>зелень</span></div>
-        <div class="swatch" style="background:#f5f0e8; border:1px solid #ddd;"><span style="color:#aaa;">слон.кість</span></div>
-        <div class="swatch" style="background:#b8922a;"><span>золото</span></div>
-      </div>
+    <div class="gift-note">
+      <div class="gift-icon">🎁</div>
+      <h4>Замість квітів</h4>
+      <p>
+      Ми вирішили відмовитися від квітів, щоб замість швидкоплинних букетів залишити собі маленькі речі на пам’ять про цей день.<br>
+      Якщо вам захочеться нас привітати — будемо раді пляшці хорошого алкоголю або красивим традиційним речам, які ми дуже любимо: косівській кераміці, декоративним плиточкам, гуцульським ліжникам чи  килимам.
+      </p>
     </div>
   </div>
 </section>
@@ -367,10 +353,7 @@
         <div class="contact-phone">+38 (0__) ___-__-__</div>
       </div>
     </div>
-    <div class="floral-divider" style="margin-top:40px;">🌺 🌾 🌺</div>
-    <p style="text-align:center; font-size:0.75rem; color:#aaa; letter-spacing:2px; text-transform:uppercase;">
-      Хештег · #олексій_і_марія_ірина_2026
-    </p>
+    <div class="floral-divider" style="margin-top:40px;">🌺 ❧ 🌺</div>
   </div>
 </section>
 
@@ -383,5 +366,31 @@
   <p style="margin-top:8px; font-size:0.6rem; opacity:0.3;">Бог дав, Бог зберіг — разом назавжди</p>
 </footer>
 
+<script>
+// Gallery functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const galleryItems = document.querySelectorAll('.gallery-thumbnail');
+  const mainImage = document.querySelector('.gallery-main-image img');
+  const mainCaption = document.querySelector('.gallery-main-caption');
+  
+  galleryItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const newSrc = this.querySelector('img').src;
+      const newAlt = this.querySelector('img').alt;
+      const newCaption = this.querySelector('.gallery-caption').textContent;
+      
+      // Remove active class from all thumbnails
+      galleryItems.forEach(i => i.classList.remove('active'));
+      // Add active class to clicked thumbnail
+      this.classList.add('active');
+      
+      // Update main image
+      mainImage.src = newSrc;
+      mainImage.alt = newAlt;
+      mainCaption.textContent = newCaption;
+    });
+  });
+});
+</script>
 </body>
 </html>

@@ -236,6 +236,8 @@ body {
   color: rgba(255,255,255,1);
   line-height: 2;
   max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
   opacity: 0;
   animation: fadeUp 1s ease 1.5s forwards;
   text-shadow: 
@@ -271,6 +273,8 @@ nav {
   z-index: 100;
   background: var(--bordeaux);
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 0;
   overflow-x: auto;
   scrollbar-width: none;
@@ -289,8 +293,16 @@ nav a {
 }
 nav a:hover { color: var(--ivory); background: rgba(255,255,255,0.1); }
 
+/* Mobile - horizontal scroll for nav */
+@media(max-width:600px) {
+  nav {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+}
+
 /* ===================== SECTIONS ===================== */
-section { padding: 80px 20px; }
+section { padding: 80px 20px 60px 20px; }
 
 .section-inner { max-width: 700px; margin: 0 auto; }
 
@@ -328,6 +340,7 @@ section { padding: 80px 20px; }
   background: var(--ivory);
   border-bottom: 4px solid transparent;
   border-image: repeating-linear-gradient(90deg, var(--bordeaux) 0, var(--bordeaux) 8px, var(--gold) 8px, var(--gold) 16px, var(--olive) 16px, var(--olive) 24px) 4;
+  padding-top: 0 !important;
 }
 
 .church-card {
@@ -378,6 +391,57 @@ section { padding: 80px 20px; }
   font-size: 0.8rem;
   color: #888;
   font-style: italic;
+}
+
+.transfer-info {
+  margin-top: 0;
+  padding: 28px;
+  background: white;
+  border: 1px solid var(--ivory3);
+  text-align: center;
+}
+
+.transfer-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--bordeaux);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.transfer-subtitle {
+  font-size: 0.95rem;
+  color: var(--olive2);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.transfer-options {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.transfer-options li {
+  padding: 12px 0 12px 28px;
+  position: relative;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text);
+  border-bottom: 1px solid var(--ivory3);
+}
+
+.transfer-options li:last-child {
+  border-bottom: none;
+}
+
+.transfer-options li::before {
+  content: '🚗';
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
 }
 
 /* ===================== TIMELINE ===================== */
@@ -520,19 +584,31 @@ section { padding: 80px 20px; }
 @media(max-width:500px){ .dress-grid { grid-template-columns:1fr; } }
 
 .dress-card {
-  padding: 28px;
+  padding: 0;
   border: 1px solid var(--ivory3);
   background: white;
   text-align: center;
+  overflow: hidden;
 }
-.dress-icon { font-size: 2.5rem; margin-bottom: 12px; }
+.dress-photo {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
 .dress-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem;
   color: var(--bordeaux);
-  margin-bottom: 8px;
+  margin: 16px 0 8px;
+  padding: 0 20px;
 }
-.dress-desc { font-size: 0.82rem; color: #666; line-height: 1.8; }
+.dress-desc { 
+  font-size: 0.82rem; 
+  color: #666; 
+  line-height: 1.8;
+  padding: 0 20px 20px;
+}
 
 .vyshyvanka-note {
   margin-top: 28px;
@@ -548,6 +624,47 @@ section { padding: 80px 20px; }
   margin-bottom: 8px;
 }
 .vyshyvanka-note p { font-size: 0.85rem; opacity: 0.85; line-height: 1.8; }
+
+.gift-note {
+  margin-top: 32px;
+  padding: 32px;
+  background: white;
+  border: 2px solid var(--gold);
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gift-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.gift-note h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--bordeaux);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.gift-note p {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.9;
+  margin-bottom: 12px;
+}
+
+.gift-suggestions {
+  font-style: italic;
+  color: var(--olive2);
+}
+
+.gift-suggestions strong {
+  color: var(--bordeaux);
+  font-style: normal;
+}
 
 .palette-row {
   display: flex;
@@ -683,10 +800,30 @@ footer p { font-size: 0.75rem; letter-spacing: 2px; }
 .floral-divider {
   text-align: center;
   margin: 40px 0;
-  font-size: 1.2rem;
-  letter-spacing: 10px;
-  color: var(--bordeaux);
-  opacity: 0.5;
+  background: transparent;
+}
+.floral-divider img {
+  width: 50%;
+  max-width: 400px;
+  height: auto;
+  display: inline-block;
+  opacity: 1;
+  mix-blend-mode: multiply;
+}
+
+.floral-divider.towel {
+  margin: 0;
+  padding: 0;
+  height: 120px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.floral-divider.towel img {
+  width: 100%;
+  height: auto;
+  display: block;
+  clip-path: inset(30% 0 30% 0);
 }
 
 /* Parallax-ish floating dahlia bg */
@@ -739,118 +876,80 @@ footer p { font-size: 0.75rem; letter-spacing: 2px; }
   line-height: 1.8;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.gallery-item {
+/* Main Gallery Image */
+.gallery-main-image {
   position: relative;
-  aspect-ratio: 4/3;
-  overflow: hidden;
-  border: 1px solid var(--ivory3);
-  background: var(--ivory2);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(107,26,42,0.15);
-}
-
-.gallery-item img {
   width: 100%;
-  height: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid var(--ivory3);
+  box-shadow: 0 8px 32px rgba(107,26,42,0.12);
+}
+
+.gallery-main-image img {
+  width: 100%;
+  height: 500px;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.05);
-}
-
-.gallery-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--olive-pale), #b5c98a);
-  color: var(--olive);
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  gap: 8px;
-}
-
-.gallery-placeholder::before {
-  content: '📷';
-  font-size: 2rem;
-}
-
-.gallery-caption {
+.gallery-main-caption {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(30,20,16,0.85), transparent);
+  background: linear-gradient(to top, rgba(30,20,16,0.9), transparent);
   color: var(--ivory);
-  padding: 16px 12px 12px;
-  font-size: 0.75rem;
+  padding: 20px;
+  font-size: 0.9rem;
   letter-spacing: 1px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  text-align: center;
 }
 
-.gallery-item:hover .gallery-caption {
-  opacity: 1;
-}
-
-.location-features {
-  margin-top: 32px;
-  padding: 24px;
-  background: white;
-  border-left: 4px solid var(--bordeaux);
-}
-
-.location-features h4 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--bordeaux);
-  margin-bottom: 12px;
-}
-
-.features-list {
+/* Thumbnails Grid */
+.gallery-thumbnails {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px 20px;
-  font-size: 0.82rem;
-  color: var(--text);
-  line-height: 1.8;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
 }
 
-.features-list li {
-  list-style: none;
-  padding-left: 20px;
+.gallery-thumbnail {
   position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border: 2px solid var(--ivory3);
+  background: var(--ivory2);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.features-list li::before {
-  content: '✦';
-  position: absolute;
-  left: 0;
-  color: var(--gold);
-  font-size: 0.7rem;
+.gallery-thumbnail:hover {
+  border-color: var(--bordeaux);
+  transform: translateY(-2px);
+}
+
+.gallery-thumbnail.active {
+  border-color: var(--bordeaux);
+  box-shadow: 0 4px 12px rgba(107,26,42,0.3);
+}
+
+.gallery-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-thumbnail .gallery-caption {
+  display: none;
 }
 
 /* ===================== RESPONSIVE ===================== */
 /* Tablet and desktop - keep zigzag timeline */
 @media(max-width:768px) and (min-width:601px) {
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-thumbnails { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* Mobile only - vertical timeline */
@@ -875,6 +974,15 @@ footer p { font-size: 0.75rem; letter-spacing: 2px; }
     display: none;
   }
   
-  .gallery-grid { grid-template-columns: 1fr; }
-  .features-list { grid-template-columns: 1fr; }
+  /* Gallery thumbnails on mobile */
+  .gallery-thumbnails { 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  /* Smaller main image on mobile */
+  .gallery-main-image,
+  .gallery-main-image img {
+    height: 300px;
+  }
 }
