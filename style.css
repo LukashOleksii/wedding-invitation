@@ -517,7 +517,10 @@ section { padding: 50px 20px 20px 20px; }
 }
 
 /* ===================== LOCATION ===================== */
-.location-section { background: var(--ivory); }
+.location-section { 
+  background: var(--ivory);
+  padding-bottom: 50px !important;
+ }
 
 .location-card {
   display: grid;
@@ -602,7 +605,10 @@ section { padding: 50px 20px 20px 20px; }
 .transfer-text span { font-size:0.8rem; opacity:0.75; line-height:1.8; }
 
 /* ===================== DRESSCODE ===================== */
-.dresscode-section { background: var(--ivory2); }
+.dresscode-section { 
+  background: var(--ivory2); 
+  padding-bottom: 50px !important;
+}
 
 .dress-grid {
   display: grid;
@@ -718,7 +724,10 @@ section { padding: 50px 20px 20px 20px; }
 }
 
 /* ===================== OBRIADY ===================== */
-.obriady-section { background: var(--ivory); }
+.obriady-section { 
+  background: var(--ivory); 
+  padding-bottom: 50px !important;
+}
 
 .obriady-grid {
   display: grid;
@@ -747,6 +756,7 @@ section { padding: 50px 20px 20px 20px; }
   background: linear-gradient(135deg, var(--bordeaux) 0%, #4a1020 100%);
   color: var(--ivory);
   text-align: center;
+  padding-bottom: 50px !important;
 }
 .rsvp-section .section-title { color: var(--ivory2); }
 .rsvp-section .section-eyebrow { color: var(--gold-light); }
