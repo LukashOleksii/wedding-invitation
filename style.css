@@ -1052,7 +1052,8 @@ select.rsvp-input option {
 .contact-block {}
 .contact-role { font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: var(--olive2); margin-bottom: 6px; }
 .contact-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--bordeaux); margin-bottom: 4px; }
-.contact-phone { font-size: 0.85rem; color: var(--text); }
+.contact-phone { font-size: 0.85rem; color: var(--text); text-decoration: none; }
+.contact-phone a { color: inherit; text-decoration: none; }
 
 /* ===================== FOOTER ===================== */
 footer {
