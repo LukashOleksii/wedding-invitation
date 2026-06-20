@@ -345,7 +345,7 @@
           <button type="button" class="stepper-btn" id="guests-plus">+</button>
         </div>
       </div>
-      <select id="rsvp-delivery" class="rsvp-input">
+      <select id="rsvp-delivery" class="rsvp-input" style="display:none;">
         <option value="" disabled selected>Потрібен трансфер з Тернополя?</option>
         <option>Так, туди і назад</option>
         <option>Тільки туди</option>
@@ -441,6 +441,18 @@ document.querySelectorAll('select.rsvp-input').forEach(sel => {
   });
 });
 
+const deliverySelect = document.getElementById('rsvp-delivery');
+document.querySelectorAll('input[name="presence"]').forEach(radio => {
+  radio.addEventListener('change', function() {
+    const isYes = this.value.includes('Так');
+    deliverySelect.style.display = isYes ? 'block' : 'none';
+    if (!isYes) {
+      deliverySelect.selectedIndex = 0;
+      deliverySelect.classList.remove('has-value');
+    }
+  });
+});
+
 const nameInput = document.getElementById('rsvp-name');
 nameInput.addEventListener('input', function() {
   this.style.color = this.value.trim() ? 'var(--gold-light)' : '';
@@ -498,11 +510,12 @@ if (localStorage.getItem('rsvp_submitted')) {
 rsvpBtn.addEventListener('click', async function() {
   const name = document.getElementById('rsvp-name').value.trim();
   const guests = document.getElementById('rsvp-guests').textContent.trim();
-  const delivery = document.getElementById('rsvp-delivery').value;
   const presenceEl = document.querySelector('input[name="presence"]:checked');
   const presence = presenceEl ? presenceEl.value : '';
+  const isYes = presence.includes('Так');
+  const delivery = isYes ? document.getElementById('rsvp-delivery').value : '—';
 
-  if (!name || !guests || !delivery || !presence) {
+  if (!name || !guests || !presence || (isYes && !delivery)) {
     alert('Будь ласка, заповніть усі поля');
     return;
   }
